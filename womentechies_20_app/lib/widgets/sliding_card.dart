@@ -28,32 +28,36 @@ class _SlidingCardsViewState extends State<SlidingCardsView> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.4,
-      child: PageView(
-        controller: pageController,
-        children: <Widget>[
-          SlidingCard(
-            name: 'Google',
-            assetName: 'google-g-logo.jpg',
-            offset: pageOffset,
-          ),
-          SlidingCard(
-            name: 'WTM',
-            assetName: 'wtm.jpg',
-            offset: pageOffset - 1,
-          ),
-          SlidingCard(
-            name: 'KFC',
-            assetName: 'kfc.png',
-            offset: pageOffset - 2,
-          ),
-          SlidingCard(
-            name: 'C9 Bistro',
-            assetName: 'c9b.jpg',
-            offset: pageOffset - 3,
-          ),
-        ],
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 5),
+      padding: EdgeInsets.only(top: 20),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height * 0.4,
+        child: PageView(
+          controller: pageController,
+          children: <Widget>[
+            SlidingCard(
+              name: 'Google',
+              assetName: 'google-g-logo.jpg',
+              offset: pageOffset,
+            ),
+            SlidingCard(
+              name: 'WTM',
+              assetName: 'wtm.jpg',
+              offset: pageOffset - 1,
+            ),
+            SlidingCard(
+              name: 'KFC',
+              assetName: 'kfc.png',
+              offset: pageOffset - 2,
+            ),
+            SlidingCard(
+              name: 'C9 Bistro',
+              assetName: 'c9b.jpg',
+              offset: pageOffset - 3,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -78,14 +82,19 @@ class SlidingCard extends StatelessWidget {
       offset: Offset(-24 * gauss * offset.sign, 0),
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: [
-            
-          ],
-          
+          borderRadius: BorderRadius.circular(20),
+          // boxShadow: [
+          //   BoxShadow(
+          //     blurRadius: 5.0,
+          //     spreadRadius: 0.05,
+          //     color: Colors.grey[400],
+          //     offset: Offset(0.0, 0.0),
+          //   )
+          // ],
         ),
         child: Card(
           margin: EdgeInsets.only(left: 8, right: 8, bottom: 24),
-          elevation: 1,
+          elevation: 8,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
           child: Column(
