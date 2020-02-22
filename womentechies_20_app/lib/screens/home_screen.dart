@@ -4,7 +4,7 @@ import 'package:womentechies_20_app/widgets/timeline_card.dart';
 import '../models/event.dart';
 
 class MyHomeScreen extends StatefulWidget {
-  static const routename = '/home';
+  static const routename = '/timeline';
 
   @override
   _MyHomeScreenState createState() => _MyHomeScreenState();
