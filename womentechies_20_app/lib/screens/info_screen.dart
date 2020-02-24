@@ -15,7 +15,7 @@ class _InfoScreenState extends State<InfoScreen> with TickerProviderStateMixin {
   TabController _tabController;
   @override
   void initState() {
-    _tabController = new TabController(length: 2, vsync: this);
+    _tabController = new TabController(length: 3, vsync: this);
     super.initState();
   }
 
@@ -28,40 +28,48 @@ class _InfoScreenState extends State<InfoScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        slivers: <Widget>[
-          SliverAppBar(
-            backgroundColor: backgroundColor,
-            pinned: true,
-            bottom: TabBar(
-              controller: _tabController,
-              isScrollable: true,
-              labelStyle: selectedLabelStyle,
-              labelColor: Colors.pink,
-              unselectedLabelColor: Colors.grey,
-              indicator: BoxDecoration(color: backgroundColor),
-              indicatorSize: TabBarIndicatorSize.tab,
-              tabs: <Widget>[
-                Tab(
-                  text: 'Speakers',
-                ),
-                Tab(
-                  text: 'Sponsors',
-                ),
-              ],
+      body: Theme(
+        data: Theme.of(context).copyWith(primaryColor: Colors.pink),
+        child: CustomScrollView(
+          physics: NeverScrollableScrollPhysics(),
+          slivers: <Widget>[
+            SliverAppBar(
+              backgroundColor: backgroundColor,
+              pinned: true,
+              bottom: TabBar(
+                controller: _tabController,
+                isScrollable: true,
+                labelStyle: selectedLabelStyle,
+                labelColor: Colors.pink,
+                labelPadding: EdgeInsets.only(left: 55, right: 55),
+                unselectedLabelColor: Colors.grey,
+                indicator: BoxDecoration(color: backgroundColor),
+                indicatorSize: TabBarIndicatorSize.tab,
+                tabs: <Widget>[
+                  Tab(
+                    text: 'Speakers',
+                  ),
+                  Tab(
+                    text: 'Sponsors',
+                  ),
+                  Tab(
+                    text: 'The Team',
+                  ),
+                ],
+              ),
             ),
-          ),
-          SliverFillRemaining(
-            child: TabBarView(
-              controller: _tabController,
-              children: <Widget>[
-                SpeakerTab(),
-                SpeakerTab(),
-              ],
-            ),
-          )
-        ],
+            SliverFillRemaining(
+              child: TabBarView(
+                controller: _tabController,
+                children: <Widget>[
+                  SpeakerTab(),
+                  SpeakerTab(),
+                  SpeakerTab(),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -98,10 +106,14 @@ class SpeakerTab extends StatelessWidget {
         builder: (context, index, data) {
           return Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-              BoxShadow(color: Color(0x1F8A959E), offset: Offset(0,0), blurRadius: 10, spreadRadius: 2),
-            ]),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color(0x1F8A959E),
+                      offset: Offset(0, 0),
+                      blurRadius: 10,
+                      spreadRadius: 2),
+                ]),
             child: Card(
               elevation: 0,
               shape: RoundedRectangleBorder(
@@ -136,7 +148,10 @@ class SpeakerTab extends StatelessWidget {
                   ),
                   Text(
                     occupation[index],
-                    style: TextStyle(color: Colors.grey[600], fontSize: 20, fontWeight: FontWeight.w300),
+                    style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 20,
+                        fontWeight: FontWeight.w300),
                   ),
                   SizedBox(
                     height: 10,

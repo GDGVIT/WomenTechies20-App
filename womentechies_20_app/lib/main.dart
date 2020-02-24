@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/fa_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:womentechies_20_app/screens/github_auth_screen.dart';
 
 import './screens/github_screen.dart';
 import './screens/qr_screen.dart';
@@ -10,6 +11,7 @@ import './screens/home_screen.dart';
 import './screens/splash_screen.dart';
 import './screens/info_screen.dart';
 import './screens/social_screen.dart';
+
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -29,8 +31,9 @@ class MyApp extends StatelessWidget {
       //     body1: TextStyle(color: Colors.white),
 
       //   ),
-      // ),
+      // )
       theme: ThemeData(
+        fontFamily: 'Montserrat',
         primarySwatch: Colors.orange,
         canvasColor: Colors.white,
         appBarTheme: AppBarTheme(
@@ -49,6 +52,7 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routename: (_) => HomeScreen(),
         SplashScreen.routename: (_) => SplashScreen(),
+        GithubAuthScreen.routename: (_) => GithubAuthScreen(),
       },
     );
   }
@@ -66,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
     MyHomeScreen(),
     InfoScreen(),
     GithubScreen(),
-    TeamInfoScreen(),
+    // TeamInfoScreen(),
     QrCodeScreen(),
     SocialScreen(),
   ];
@@ -153,25 +157,25 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 21,
             ),
           ),
-          BottomNavigationBarItem(
-              title: Padding(
-                padding: const EdgeInsets.only(top: 1),
-                child: Text('The Team'),
-              ),
-              icon: Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: Icon(
-                  Icons.person,
-                  size: 27,
-                ),
-              )),
+          // BottomNavigationBarItem(
+          //     title: Padding(
+          //       padding: const EdgeInsets.only(top: 1),
+          //       child: Text('The Team'),
+          //     ),
+          //     icon: Padding(
+          //       padding: const EdgeInsets.only(bottom: 2),
+          //       child: Icon(
+          //         Icons.person,
+          //         size: 27,
+          //       ),
+          //     )),
           BottomNavigationBarItem(
             activeIcon: FaIcon(
               FontAwesomeIcons.qrcode,
               color: Colors.pink,
               size: 21,
             ),
-            title: (_pageIndex == 4)
+            title: (_pageIndex == 3)
                 ? Padding(
                     padding: const EdgeInsets.only(top: 5.0),
                     child: Text(
@@ -196,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: Colors.deepPurple[400],
               size: 21,
             ),
-            title: (_pageIndex == 5)
+            title: (_pageIndex == 4)
                 ? Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(

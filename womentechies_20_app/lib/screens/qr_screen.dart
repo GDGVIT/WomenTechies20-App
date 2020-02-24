@@ -45,7 +45,7 @@ class QrCodeScreen extends StatelessWidget {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             return Container(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03),
               child: SingleChildScrollView(
                   child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -71,7 +71,7 @@ class QrCodeScreen extends StatelessWidget {
                       child: QrImage(
                         data: snapshot.data,
                         version: QrVersions.auto,
-                        size: MediaQuery.of(context).size.width * 0.7,
+                        size: MediaQuery.of(context).size.height * 0.32,
                       ),
                     ),
                   ),

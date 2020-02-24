@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
         Navigator.of(context).pushReplacement(PageTransition(
             child: LoginScreen(), type: PageTransitionType.rightToLeft));
         sharedPrefsCutsom.setIfLoggedIn(false);
-      } else if(isLoggedIn == true){
+      } else if (isLoggedIn == true) {
         Navigator.of(context).pushReplacement(PageTransition(
             child: HomeScreen(), type: PageTransitionType.rightToLeft));
       }
@@ -52,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
@@ -62,8 +62,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 fit: BoxFit.cover,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
             Container(
-              height: 100,
+              height: 50,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
