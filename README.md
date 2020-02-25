@@ -1,7 +1,7 @@
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
-	<h2 align="center"> < Insert Project Title Here > </h2>
-	<h4 align="center"> < Insert Project Description Here > <h4>
+	<h2 align="center"> WomenTechies '20 </h2>
+	<h4 align="center"> Made with flutter <h4>
 </p>
 
 ---
@@ -10,10 +10,10 @@
 
 
 ## Functionalities
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
-- [ ]  < insert functionality >
+- [ ]  Participant login/logout 🔐
+- [ ]  Timeline 📅
+- [ ]  Food coupon generation 😋
+- [ ]  Lucky Draw(?) 🙄
 
 <br>
 
@@ -21,8 +21,8 @@
 ## Instructions to run
 
 * Pre-requisites:
-	-  < insert pre-requisite >
-	-  < insert pre-requisite >
+	-  Android Studio, Android SDK
+	-  Flutter SDK
 
 * < directions to install > 
 ```bash
@@ -32,15 +32,14 @@
 * < directions to execute >
 
 ```bash
-< insert code >
+flutter run
 ```
 
 <br>
 
 ## Contributors
 
-* [ < INSERT NAME HERE > ](INSERT_PROFILE_URL_HERE)
-* [ < INSERT NAME HERE > ](INSERT_PROFILE_URL_HERE)
+* [ <Siddhartha Varma> ](https://github.com/BRO3886)
 
 
 
