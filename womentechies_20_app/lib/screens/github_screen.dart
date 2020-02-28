@@ -35,6 +35,7 @@ class _GithubScreenState extends State<GithubScreen> {
               title,
               style: Theme.of(context).appBarTheme.textTheme.title.copyWith(
                     color: Colors.deepPurple[400],
+                    fontFamily: 'Montserrat',
                     fontSize: 30,
                   ),
             ),
@@ -83,13 +84,29 @@ class _GithubScreenState extends State<GithubScreen> {
           'http://dscinfo.herokuapp.com/json/analyze?org=$username&repo=$repoName';
       // print(url);
       // print(ok.runtimeType);
+      String cookieString = await sharedPrefsCutsom.getGitCookie();
+      // cookieString = +cookieString;
+      // print("stored");
+      cookieString = cookieString.substring(1,cookieString.length-3);
+      cookieString = cookieString + "\"";
+      print(cookieString);
+      // print("def");
+      // print("\"2|1:0|10:1582822241|4:user|280:eyJhdmF0YXJfdXJsIjogImh0dHBzOi8vYXZhdGFyczMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvMzk4NTYwMzQ/dj00IiwgImVtYWlsIjogbnVsbCwgImlkIjogMzk4NTYwMzQsICJuYW1lIjogIlNpZGRoYXJ0aGEgVmFybWEiLCAibG9naW4iOiAiQlJPMzg4NiIsICJhY2Nlc3NfdG9rZW4iOiAiMjVkNDJhODdiMmMwZDNiMGExYmY0MDgxOTIxZTk4ZTAwMWNkMDNiNCJ9|5fcad75d4ed6c71656999c495ce5863d9e46bb09d8d96b5181afb866326f2e17\"");
+      // if(cookieString == "\"2|1:0|10:1582822241|4:user|280:eyJhdmF0YXJfdXJsIjogImh0dHBzOi8vYXZhdGFyczMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvMzk4NTYwMzQ/dj00IiwgImVtYWlsIjogbnVsbCwgImlkIjogMzk4NTYwMzQsICJuYW1lIjogIlNpZGRoYXJ0aGEgVmFybWEiLCAibG9naW4iOiAiQlJPMzg4NiIsICJhY2Nlc3NfdG9rZW4iOiAiMjVkNDJhODdiMmMwZDNiMGExYmY0MDgxOTIxZTk4ZTAwMWNkMDNiNCJ9|5fcad75d4ed6c71656999c495ce5863d9e46bb09d8d96b5181afb866326f2e17\""){
+      //   print("true");
+      // }else{
+      //   print("false");
+      // }
+      // print(cookieString);
+      // print("\"user="+cookieString);
       final response = await http.get(url, headers: {
         "content-type": "application/json",
-        "cookie":{"user: 2|1:0|10:1582564050|4:user|280:eyJlbWFpbCI6IG51bGwsICJpZCI6IDM5ODU2MDM0LCAiYXZhdGFyX3VybCI6ICJodHRwczovL2F2YXRhcnMzLmdpdGh1YnVzZXJjb250ZW50LmNvbS91LzM5ODU2MDM0P3Y9NCIsICJuYW1lIjogIlNpZGRoYXJ0aGEgVmFybWEiLCAibG9naW4iOiAiQlJPMzg4NiIsICJhY2Nlc3NfdG9rZW4iOiAiNWU1MmMyODg0MWY1YzkxMzI2OGFlMDJjY2NlYmFiOTgyYmJhMTRlYSJ9|6f114298e4d1636d451e373f7b8afc2d6c4db6c568ec590464f18dae2ca1b46b"}.toString(),
+        "cookie": "user="+cookieString
       });
       if (response.statusCode == 200) {
         final client = clientFromJson(response.body);
         print(client);
+        print(client.gitinspector.repository.empty);
       }
     } catch (e) {
       print(e);
@@ -102,7 +119,7 @@ class _GithubScreenState extends State<GithubScreen> {
         appBar: myAppBar('GitHub', context),
         body: Theme(
           data:
-              Theme.of(context).copyWith(primaryColor: Colors.deepPurple[400]),
+              Theme.of(context).copyWith(primaryColor: Colors.deepPurple[400],),
           child: FutureBuilder(
             future: sharedPrefsCutsom.getIfGithubAuthenticated(),
             builder: (context, snapshot) {
@@ -139,15 +156,17 @@ class _GithubScreenState extends State<GithubScreen> {
                               if (url == 'http://dscinfo.herokuapp.com/token') {
                                 flutterWebviewPlugin.getCookies().then(
                                   (final cookies) {
-                                    print(cookies);
-                                    print(cookies.keys);
+                                    print(cookies["\"user"]);
+                                    sharedPrefsCutsom.setGitCookie(cookies["\"user"]);
                                   },
                                 );
                                 flutterWebviewPlugin.close();
-                               setState(() {
-                                  sharedPrefsCutsom
-                                    .setIfGithubAuthenticated(true);
-                               });
+                                setState(
+                                  () {
+                                    sharedPrefsCutsom
+                                        .setIfGithubAuthenticated(true);
+                                  },
+                                );
                               }
                             },
                           );

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/fa_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:womentechies_20_app/screens/github_auth_screen.dart';
 
 import './screens/github_screen.dart';
 import './screens/qr_screen.dart';
-import './screens/team_info_screen.dart';
+
 import './screens/home_screen.dart';
 import './screens/splash_screen.dart';
 import './screens/info_screen.dart';
@@ -52,7 +51,6 @@ class MyApp extends StatelessWidget {
       routes: {
         HomeScreen.routename: (_) => HomeScreen(),
         SplashScreen.routename: (_) => SplashScreen(),
-        GithubAuthScreen.routename: (_) => GithubAuthScreen(),
       },
     );
   }
@@ -204,13 +202,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? Padding(
                     padding: const EdgeInsets.only(top: 5),
                     child: Text(
-                      'Hashtag',
+                      'Highlights',
                       style: TextStyle(color: Colors.deepPurple[400]),
                     ),
                   )
                 : Padding(
                     padding: EdgeInsets.only(top: 5),
-                    child: Text('Hashtag'),
+                    child: Text('Highlights'),
                   ),
             icon: FaIcon(
               FontAwesomeIcons.hashtag,

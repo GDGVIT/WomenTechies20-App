@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final selectedLabelStyle =
-    TextStyle(color: Colors.pink, fontSize: 30, fontWeight: FontWeight.w700);
+    TextStyle(color: Colors.pink, fontSize: 30, fontWeight: FontWeight.w700, fontFamily: 'Montserrat');
 
 final nameStyle = TextStyle(
   color: Colors.grey[850],

@@ -20,12 +20,16 @@ class QrCodeScreen extends StatelessWidget {
           centerTitle: true,
           // backgroundColor: Colors.blue,
           title: Container(
-            margin: EdgeInsets.only(top: 45, bottom: 20,),
+            margin: EdgeInsets.only(
+              top: 45,
+              bottom: 20,
+            ),
             padding: EdgeInsets.all(20),
             child: Text(
               title,
               style: Theme.of(context).appBarTheme.textTheme.title.copyWith(
                     color: Colors.pink,
+                    fontFamily: 'Montserrat',
                     fontSize: 30,
                   ),
             ),
@@ -40,73 +44,80 @@ class QrCodeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: myAppBar('QR Code', context),
-      body: FutureBuilder(
-        future: sharedPrefsCutsom.getUserEmail(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return Container(
-              padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.03),
-              child: SingleChildScrollView(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text('Email', style: boldText),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    snapshot.data,
-                    style: TextStyle(fontSize: 20, color: Colors.grey[600]),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  Text('Scan this QR Code', style: boldText),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Center(
+      body: Theme(
+        data: Theme.of(context).copyWith(accentColor: Colors.pinkAccent),
+        child: FutureBuilder(
+          future: sharedPrefsCutsom.getUserEmail(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Container(
+                child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: QrImage(
-                        data: snapshot.data,
-                        version: QrVersions.auto,
-                        size: MediaQuery.of(context).size.height * 0.32,
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.03),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text('Email', style: boldText),
+                      SizedBox(
+                        height: 10,
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Center(
-                    child: Container(
-                      padding: const EdgeInsets.all(15.0),
-                      height: 90,
-                      width: MediaQuery.of(context).size.width * 0.72,
-                      child: MaterialButton(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                        elevation: 0,
-                        color: Colors.pink,
-                        child: Text(
-                          'Logout',
-                          style: btnText,
+                      Text(
+                        snapshot.data,
+                        style: TextStyle(fontSize: 20, color: Colors.grey[600]),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      Text('Scan this QR Code', style: boldText),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: QrImage(
+                            data: snapshot.data,
+                            version: QrVersions.auto,
+                            size: MediaQuery.of(context).size.height * 0.32,
+                          ),
                         ),
-                        onPressed: () {
-                          sharedPrefsCutsom.setIfLoggedIn(false);
-                          Navigator.of(context).pushReplacement(PageTransition(
-                              child: LoginScreen(),
-                              type: PageTransitionType.leftToRight));
-                        },
                       ),
-                    ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Center(
+                        child: Container(
+                          padding: const EdgeInsets.all(15.0),
+                          height: 90,
+                          width: MediaQuery.of(context).size.width * 0.72,
+                          child: MaterialButton(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            elevation: 0,
+                            color: Colors.pink,
+                            child: Text(
+                              'Logout',
+                              style: btnText,
+                            ),
+                            onPressed: () {
+                              sharedPrefsCutsom.setIfLoggedIn(false);
+                              Navigator.of(context).pushReplacement(
+                                  PageTransition(
+                                      child: LoginScreen(),
+                                      type: PageTransitionType.leftToRight));
+                            },
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              )),
-            );
-          }
-          return Center(child: CircularProgressIndicator());
-        },
+                )),
+              );
+            }
+            return Center(child: CircularProgressIndicator());
+          },
+        ),
       ),
     );
   }

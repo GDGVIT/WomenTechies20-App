@@ -50,4 +50,15 @@ class SharedPrefsCutsom {
     final key = 'github';
     prefs.setBool(key, value);
   }
+
+  Future<String> getGitCookie() async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'gitCookie';
+    return prefs.getString(key);
+  }
+  setGitCookie(String value) async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'gitCookie';
+    prefs.setString(key, value);
+  }
 }
