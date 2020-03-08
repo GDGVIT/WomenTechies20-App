@@ -30,7 +30,7 @@ class _SocialScreenState extends State<SocialScreen> {
       final response = await http.post(
         url,
         headers: {"Auth-Token": authToken},
-        body: {"hashtag": "tree"},
+        body: {"hashtag": "hacklikeagirl"},
       );
       print("got");
       if (response.statusCode == 200) {

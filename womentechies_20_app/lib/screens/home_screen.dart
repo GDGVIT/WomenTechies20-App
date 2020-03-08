@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/fa_icon.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:womentechies_20_app/screens/QR_easter.dart';
 import 'package:womentechies_20_app/utils/styles.dart';
 // import 'package:womentechies_20_app/widgets/timeline_card.dart';
 import '../models/event.dart';
@@ -262,9 +263,22 @@ class MyHomeScreen extends StatelessWidget {
                             GestureDetector(
                               onTap: (){
                                 if(day2[index].faIcon.icon == FontAwesomeIcons.pizzaSlice){
-                                  Fluttertoast.showToast(msg: 'No secrets here');
+                                  Fluttertoast.showToast(msg: 'No surprises here');
                                 }
                               },
+                              onDoubleTap: (){
+                                if(day2[index].faIcon.icon == FontAwesomeIcons.pizzaSlice){
+                                  Fluttertoast.showToast(msg: 'This wont get you free pizza');
+                                }
+                              },
+                              onLongPress: (){
+                                if(day2[index].faIcon.icon == FontAwesomeIcons.pizzaSlice){
+                                  Fluttertoast.showToast(msg: 'Or maybe it will');
+                                  Future.delayed(Duration(seconds: 2));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>QREaster()));
+                                }
+                              },
+
                               child: CircleAvatar(
                                 // child: FaIcon(FontAwesomeIcons.utensils, color: Colors.white,),
                                 child: day2[index].faIcon,

@@ -33,6 +33,7 @@ dependencies:
   url_launcher:
   fluttertoast:
   flip_card:
+  percent_indicator:
 
 dev_dependencies:
   flutter_test:
@@ -56,72 +57,10 @@ flutter:
     - logo-orange.png
     - speaker1.jpeg
     - speaker2.jfif
+    - speaker3.jpg
     - women.png
-    - assets/sponsors/balsamiq.png
-    - assets/sponsors/bugsee.png
-    - assets/sponsors/cloudsploit.png
-    - assets/sponsors/cmr.png
-    - assets/sponsors/goel.png
-    - assets/sponsors/jetbrains.png
-    - assets/sponsors/nkcc.png
-    - assets/sponsors/sketch.png
-    - assets/core/ABDEALI.webp
-    - assets/core/AdityaMadan.webp
-    - assets/core/AkshatGupta.webp
-    - assets/core/AmoghLele.webp
-    - assets/core/AnanyaG.webp
-    - assets/core/angadsharma.webp
-    - assets/core/AnshulBamb.webp
-    - assets/core/ArjunBhanot.webp
-    - assets/core/ArushiJain.webp
-    - assets/core/AshutoshKaushik.webp
-    - assets/core/AviralChauhan.webp
-    - assets/core/ChanakyaKapoor.webp
-    - assets/core/ChiyaBorkar.webp
-    - assets/core/DeepakMalpani.webp
-    - assets/core/DeepakNahar.webp
-    - assets/core/EkaanshArora.webp
-    - assets/core/FenilJain.webp
-    - assets/core/GovindKrishnan.webp
-    - assets/core/GurnehmatDhindsa.webp
-    - assets/core/HardikKataria.webp
-    - assets/core/IshiYadav.webp
-    - assets/core/JanviPrasad.webp
-    - assets/core/kritikasharma.webp
-    - assets/core/Kush.webp
-    - assets/core/ManoramaM.webp
-    - assets/core/MayankKumar.webp
-    - assets/core/MdHishaamAkhtar.webp
-    - assets/core/meherdeepthakur.webp
-    - assets/core/MuskanRastogi.webp
-    - assets/core/NeilKavalakkat.webp
-    - assets/core/NirmitJatana.webp
-    - assets/core/PragatiBhattad.webp
-    - assets/core/prakharsoni.webp
-    - assets/core/PranavRaaghav.webp
-    - assets/core/PrateekMewara.webp
-    - assets/core/PurushottamSharma.webp
-    - assets/core/RamanStudios.webp
-    - assets/core/RiddhiGupta.webp
-    - assets/core/RithikJain.webp
-    - assets/core/RohitMenon.webp
-    - assets/core/RuchicaSinha.webp
-    - assets/core/SaiSandeepRayanuthala.webp
-    - assets/core/SaloniParekh.webp
-    - assets/core/SatkritiSingh.webp
-    - assets/core/ShantanuVerma.webp
-    - assets/core/ShivanshTiwari.webp
-    - assets/core/SiddharthaVerma.webp
-    - assets/core/SrinjaySaha.webp
-    - assets/core/SwayamS.Sharma.webp
-    - assets/core/TanmaySrivastava.webp
-    - assets/core/ThanmayV.webp
-    - assets/core/UbaidUsmani.webp
-    - assets/core/VishaalSelvaraj.webp
-    - assets/core/Yuvraj.webp
-    - assets/core/Sanchi.webp
-    - assets/core/magicalduck.webp
-    - assets/core/nikal.webp
+    - assets/sponsors/
+    - assets/core/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

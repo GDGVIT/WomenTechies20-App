@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       // darkTheme: ThemeData(
       //   primarySwatch: Colors.lightBlue,
       //   canvasColor: Colors.black45,
@@ -155,18 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 21,
             ),
           ),
-          // BottomNavigationBarItem(
-          //     title: Padding(
-          //       padding: const EdgeInsets.only(top: 1),
-          //       child: Text('The Team'),
-          //     ),
-          //     icon: Padding(
-          //       padding: const EdgeInsets.only(bottom: 2),
-          //       child: Icon(
-          //         Icons.person,
-          //         size: 27,
-          //       ),
-          //     )),
+          
           BottomNavigationBarItem(
             activeIcon: FaIcon(
               FontAwesomeIcons.qrcode,
@@ -194,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             activeIcon: FaIcon(
-              FontAwesomeIcons.hashtag,
+              FontAwesomeIcons.history,
               color: Colors.deepPurple[400],
               size: 21,
             ),
@@ -211,7 +201,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Text('Highlights'),
                   ),
             icon: FaIcon(
-              FontAwesomeIcons.hashtag,
+              FontAwesomeIcons.history,
               size: 21,
             ),
           ),
