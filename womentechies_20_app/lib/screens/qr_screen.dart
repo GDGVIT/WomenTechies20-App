@@ -92,6 +92,7 @@ class TeamTab extends StatelessWidget {
     'Amogh Lele',
     'Deepak Malpani',
     'Ananya G',
+    'Abhishek Kushwaha',
     'Ashutosh Kaushik',
     'Fenil Jain',
     'Kush',
@@ -127,7 +128,7 @@ class TeamTab extends StatelessWidget {
     'Naynika Wason',
     'Saloni Parekh',
     'Anshul Bamb',
-    'Abdeali',
+    'Abdeali Jaroli',
     'Aditya Madan',
     'Arushi Jain',
     'Gurnehmat Dhindsa',
@@ -154,7 +155,7 @@ class TeamTab extends StatelessWidget {
     'assets/core/DeepakMalpani.webp',
 
     'assets/core/AnanyaG.webp',
-
+    'assets/core/AbhishekKushwaha.webp',
     'assets/core/AshutoshKaushik.webp',
     'assets/core/FenilJain.webp',
     'assets/core/Kush.webp',
@@ -230,6 +231,7 @@ class TeamTab extends StatelessWidget {
     'Nope',
     'Come on, it\'s not that difficult to find easter eggs',
     "Ananya is a serial sleeper",
+    'Not here',
     'Let it be',
     'Not your day today',
     'Do you like pizza?',
@@ -284,9 +286,10 @@ class TeamTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SnapList(
+        padding: EdgeInsets.symmetric(vertical: 20),
         snaplistController: snaplistController,
         axis: Axis.vertical,
-        sizeProvider: (index, data) => Size(300, 390),
+        sizeProvider: (index, data) => Size(300, 370),
         separatorProvider: (index, data) => Size(0, 40),
         count: names.length,
         builder: (context, index, data) {

@@ -102,6 +102,7 @@ class SponsorTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SnapList(
+        padding: EdgeInsets.symmetric(vertical: 20),
         snaplistController: snaplistController,
         axis: Axis.vertical,
         sizeProvider: (index, data) => Size(300, 390),
@@ -192,7 +193,9 @@ class SpeakerTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // padding: EdgeInsets.only(bottom: 10),
       child: SnapList(
+        padding: EdgeInsets.symmetric(vertical: 20),
         snaplistController: snaplistController,
         axis: Axis.vertical,
         sizeProvider: (index, data) => Size(300, 390),
@@ -200,6 +203,7 @@ class SpeakerTab extends StatelessWidget {
         count: names.length,
         builder: (context, index, data) {
           return Container(
+            // padding: EdgeInsets.only(bottom: 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 boxShadow: [

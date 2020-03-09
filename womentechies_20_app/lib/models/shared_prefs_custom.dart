@@ -71,4 +71,24 @@ class SharedPrefsCutsom {
     final key = 'hasRepo';
     prefs.setBool(key, value);
   }
+  Future<String> getGithubUsername() async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'username';
+    return prefs.getString(key);
+  }
+  setGithubUsername(String value) async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'username';
+    prefs.setString(key, value);
+  }
+  Future<String> getGithubRepo() async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'repo';
+    return prefs.getString(key);
+  }
+  setGithubRepo(String value) async{
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final key = 'repo';
+    prefs.setString(key, value);
+  }
 }

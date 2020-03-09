@@ -31,26 +31,31 @@ class _GithubAuthScreenState extends State<GithubAuthScreen> {
       // print(url);
       // print(ok.runtimeType);
       String cookieString = await sharedPrefsCutsom.getGitCookie();
+      String middle;
+      String end;
       // cookieString = +cookieString;
       // print("stored");
       // cookieString = cookieString.substring(0, cookieString.length);
       print(cookieString);
-      // cookieString = cookieString + "\"";
-      // print(cookieString);
-      // print("def");
-      // print("\"2|1:0|10:1582822241|4:user|280:eyJhdmF0YXJfdXJsIjogImh0dHBzOi8vYXZhdGFyczMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvMzk4NTYwMzQ/dj00IiwgImVtYWlsIjogbnVsbCwgImlkIjogMzk4NTYwMzQsICJuYW1lIjogIlNpZGRoYXJ0aGEgVmFybWEiLCAibG9naW4iOiAiQlJPMzg4NiIsICJhY2Nlc3NfdG9rZW4iOiAiMjVkNDJhODdiMmMwZDNiMGExYmY0MDgxOTIxZTk4ZTAwMWNkMDNiNCJ9|5fcad75d4ed6c71656999c495ce5863d9e46bb09d8d96b5181afb866326f2e17\"");
-      // if(cookieString == "\"2|1:0|10:1582822241|4:user|280:eyJhdmF0YXJfdXJsIjogImh0dHBzOi8vYXZhdGFyczMuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3UvMzk4NTYwMzQ/dj00IiwgImVtYWlsIjogbnVsbCwgImlkIjogMzk4NTYwMzQsICJuYW1lIjogIlNpZGRoYXJ0aGEgVmFybWEiLCAibG9naW4iOiAiQlJPMzg4NiIsICJhY2Nlc3NfdG9rZW4iOiAiMjVkNDJhODdiMmMwZDNiMGExYmY0MDgxOTIxZTk4ZTAwMWNkMDNiNCJ9|5fcad75d4ed6c71656999c495ce5863d9e46bb09d8d96b5181afb866326f2e17\""){
-      //   print("true");
-      // }else{
-      //   print("false");
-      // }
-      // print(cookieString);
-      // print("\"user="+cookieString);
+      
+      if(cookieString.contains('\\')){
+        cookieString = cookieString.split('\\')[1];
+        middle = '';
+        end = '"';
+      }else{
+        middle = '"';
+        end = '';
+      }
+
+      print(cookieString);
+      
       final response = await http.get(url, headers: {
         "content-type": "application/json",
-        "cookie": "user=" + "\"" + cookieString,
+        "cookie": "user=" + middle + cookieString + end,
       });
       if (response.statusCode == 200) {
+        sharedPrefsCutsom.setGithubUsername(username);
+        sharedPrefsCutsom.setGithubRepo(repoName);
         final client = clientFromJson(response.body);
         print(client);
         print(client.gitinspector.repository.empty);
@@ -67,6 +72,7 @@ class _GithubAuthScreenState extends State<GithubAuthScreen> {
       data: Theme.of(context).copyWith(primaryColor: Colors.deepPurple[400]),
       child: Scaffold(
         appBar: AppBar(
+          iconTheme: Theme.of(context).iconTheme.copyWith(color: Colors.white),
           title: Text(
             'Enter Repo Details',
             style: TextStyle(

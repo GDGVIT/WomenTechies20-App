@@ -39,7 +39,8 @@ flutter run
 
 ## Contributors
 
-* [ <Siddhartha Varma> ](https://github.com/BRO3886)
+* [ Siddhartha Varma ](https://github.com/BRO3886)
+
 
 
 
