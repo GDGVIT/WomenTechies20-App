@@ -56,41 +56,41 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 81,
+              height: 120,
               child: Image.asset(
                 'logo-orange.png',
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Container(
-              height: 50,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    'dsc-logo.png',
-                    fit: BoxFit.cover,
-                  ),
-                  Text(
-                    'DSC ',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 20,
-                    ),
-                  ),
-                  Text(
-                    'VIT',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Colors.grey),
-                  ),
-                ],
-              ),
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+            // Container(
+            //   height: 50,
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.center,
+            //     children: <Widget>[
+            //       Image.asset(
+            //         'dsc-logo.png',
+            //         fit: BoxFit.cover,
+            //       ),
+            //       Text(
+            //         'DSC ',
+            //         style: TextStyle(
+            //           color: Colors.grey,
+            //           fontSize: 20,
+            //         ),
+            //       ),
+            //       Text(
+            //         'VIT',
+            //         style: TextStyle(
+            //             fontWeight: FontWeight.bold,
+            //             fontSize: 20,
+            //             color: Colors.grey),
+            //       ),
+            //     ],
+            //   ),
+            // ),
           ],
         ),
       ),

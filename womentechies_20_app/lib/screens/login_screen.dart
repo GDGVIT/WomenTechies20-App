@@ -170,6 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return 'Please enter correct email';
                               }
                             },
+                            // onChanged: (email)=>userInfo['email'] = email,
                             onSaved: (email) => userInfo['email'] = email,
                           ),
                           SizedBox(
@@ -192,6 +193,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 return 'Password length must be atleast 6 characters long';
                               }
                             },
+                            // onChanged: (password)=>userInfo['password'] = password,
                             onSaved: (password) =>
                                 userInfo['password'] = password,
                           ),

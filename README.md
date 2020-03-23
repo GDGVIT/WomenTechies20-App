@@ -6,14 +6,16 @@
 
 ---
 [![DOCS](https://img.shields.io/badge/Documentation-see%20docs-green?style=flat-square&logo=appveyor)](INSERT_LINK_FOR_DOCS_HERE) 
-  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](INSERT_UI_LINK_HERE)
+  [![UI ](https://img.shields.io/badge/User%20Interface-Link%20to%20UI-orange?style=flat-square&logo=appveyor)](https://play.google.com/store/apps/details?id=com.dscvit.womentechies_20_app)
 
 
 ## Functionalities
-- [ ]  Participant login/logout 🔐
-- [ ]  Timeline 📅
-- [ ]  Food coupon generation 😋
-- [ ]  Lucky Draw(?) 🙄
+- [✔]  Participant login/logout 🔐
+- [✔]  Timeline 📅
+- [✔]  Food coupon generation 😋
+- [✔]  Instagram Highlights 🕙
+- [✔]  Github Repo Info 🧾
+
 
 <br>
 
@@ -24,18 +26,24 @@
 	-  Android Studio, Android SDK
 	-  Flutter SDK
 
-* directions to execute 
+* directions to install
+  ```bash
+  git clone https://github.com/GDGVIT/WomenTechies20-App.git
+  ```
 
-```bash
-flutter run
-```
+* directions to execute 
+  ```bash
+  cd womentechies_20_app
+
+  flutter run
+  ```
 
 <br>
 
 ## Contributors
 
-* [Siddhartha Varma](https://github.com/BRO3886)
 
+* [Siddhartha Varma](https://github.com/BRO3886)
 
 
 <br>
