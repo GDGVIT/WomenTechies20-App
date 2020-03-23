@@ -1,7 +1,7 @@
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/30529572/72455010-fb38d400-37e7-11ea-9c1e-8cdeb5f5906e.png" />
 	<h2 align="center"> WomenTechies '20 </h2>
-	<h4 align="center"> Made with Flutter <h4>
+	<h4 align="center"> A 24 hour Women Centric hackathon conducted every year. This is the repository for the official mobile application of womentechies2020<h4>
 </p>
 
 ---
@@ -26,26 +26,24 @@
 	-  Android Studio, Android SDK
 	-  Flutter SDK
 
-* < directions to install > 
-```bash
-git clone https://github.com/GDGVIT/WomenTechies20-App.git
-```
+* directions to install
+  ```bash
+  git clone https://github.com/GDGVIT/WomenTechies20-App.git
+  ```
 
-* < directions to execute >
+* directions to execute 
+  ```bash
+  cd womentechies_20_app
 
-```bash
-cd womentechies_20_app
-
-flutter run
-```
+  flutter run
+  ```
 
 <br>
 
 ## Contributors
 
-* [ Siddhartha Varma ](https://github.com/BRO3886)
 
-
+* [Siddhartha Varma](https://github.com/BRO3886)
 
 
 <br>
